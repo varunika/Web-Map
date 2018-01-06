@@ -20,7 +20,7 @@ def decide_color(p1):
 
 
 for lt, ln, ele in zip(latitude,longitude,elevation):
-    fg1.add_child(folium.CircleMarker(location=[lt,ln], radius=6, fill=1, fill_opacity=0.7, popup=str(ele)+"m", color="grey", fill_color=decide_color(ele)))s
+    fg1.add_child(folium.CircleMarker(location=[lt,ln], radius=6, fill=1, fill_opacity=0.7, popup=str(ele)+"m", color="grey", fill_color=decide_color(ele)))
 
 fg2.add_child(folium.GeoJson(data =open("world.json", 'r', encoding = "utf-8-sig").read(), style_function= lambda x : {'fillColor':"green" if x['properties']['POP2005']<3000000 else 'orange' if 3000000< x['properties']['POP2005']<60000000 else 'red'}))
 
